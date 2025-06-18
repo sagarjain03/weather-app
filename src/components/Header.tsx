@@ -1,27 +1,23 @@
-import { useTheme } from "@/context/theme-provider"
-
+import { useTheme } from "@/context/theme-provider";
+import { SearchCity } from "./SearchCity";
 
 const Header = () => {
-
-    const { theme, setTheme } = useTheme()
-    const isDark = theme === "dark"
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <div className="sticky top-0 bg-background/50 backdrop-blur-sm dark:bg-background/80 border-b border-border">
-      <div className="flex items-center justify-between py-4 px-6">
-        <div className="flex items-center space-x-3">
+    <header className="sticky top-0 z-30 bg-background/70 backdrop-blur border-b border-border shadow-sm">
+      <div className="flex items-center justify-between px-6 py-3 max-w-4xl mx-auto">
+        <div className="flex items-center gap-2">
           <span className="text-2xl">🌤️</span>
           <span className="text-xl font-bold tracking-wide text-primary">Weatherly</span>
         </div>
-        <div>
-          {/* search */}
-          {/* themetoggle */}
+        <div className="flex items-center gap-3">
+          <SearchCity />
           <button
             type="button"
-            onClick={() => {
-              setTheme(isDark ? "light" : "dark");
-            }}
-            className="px-3 py-1 rounded bg-muted text-foreground hover:bg-accent transition flex items-center justify-center"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="p-2 rounded-full bg-muted text-foreground hover:bg-accent transition-colors"
             aria-label="Toggle theme"
           >
             {isDark ? (
@@ -45,8 +41,8 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </div>
-  )
-}
+    </header>
+  );
+};
 
-export default Header
+export default Header;
