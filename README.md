@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# 🌦️ Weatherly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Weatherly** is a clean and modern weather forecast web app built using **React**, **TypeScript**, and **Vite**. It allows users to search for any city and get real-time weather updates with beautiful visuals and user-friendly interactions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🌍 Search weather by city name
+- 📍 Get weather for your current location
+- 🌡️ Displays temperature, humidity, pressure, wind, and more
+- 🌤️ Dynamic weather icons based on current conditions
+- ⭐ Mark cities as favorites
+- 🕑 Recent search history
+- ⚡ Built with React + Vite + TypeScript
+- 🎯 Fast performance and lightweight UI
+- 📱 Fully responsive design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tech Stack
+
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** Tailwind CSS
+- **API:** OpenWeatherMap API
+- **State/Async:** React Query
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/sagarjain03/weatherly.git
+   ```
+
+2. **Move into the project folder**
+   ```sh
+   cd "internship Projects/weather_app"
+   ```
+
+3. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+4. **Create environment variable file**
+
+   Create a `.env` file in the root of `weather_app` and add your OpenWeatherMap API key:
+   ```
+   VITE_OPENWEATHER_API_KEY=your_openweathermap_api_key_here
+   ```
+
+5. **Start the development server**
+   ```sh
+   npm run dev
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+  api/
+  components/
+  context/
+  hooks/
+  lib/
+  pages/
+  App.tsx
+  main.tsx
+  ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 Notes
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Make sure you have a valid [OpenWeatherMap API key](https://openweathermap.org/api).
+- The app uses localStorage for favorites and search history.
+- For best experience, allow location access in your browser.
+
+---
+
+## 💡 Credits
+
+Made with ❤️ by Sagar Jain
